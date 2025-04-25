@@ -1,5 +1,15 @@
 (function checkAndRun() {
 
+  // Check if the current site matches the desired URL
+
+  if (window.location.hostname !== 'solutions.inet-logistics.com') {
+
+    console.log('[AutoFill Extension] This script only works on the specified site.');
+
+    return; // Exit if not on the correct site
+
+  }
+
   const waitForFields = () => {
 
     const pickupDate = document.getElementById('elmtKopf.TransportInfo.AbholungVonDatum');
@@ -22,17 +32,33 @@
 
     function pad(n) { return n < 10 ? '0' + n : n; }
 
+    function getNextWeekday(date) {
+
+      while (date.getDay() === 0 || date.getDay() === 6) {
+
+        date.setDate(date.getDate() + 1);
+
+      }
+
+      return date;
+
+    }
+
     const now = new Date();
 
     const plus30 = new Date(now.getTime() + 30 * 60000);
 
-    const plus5 = new Date(now.getTime() + 5 * 24 * 60 * 60000);
+    // Get next weekday for pickup
 
-    const dateToday = pad(now.getDate()) + '.' + pad(now.getMonth() + 1) + '.' + now.getFullYear();
+    const pickup = getNextWeekday(new Date(now));
+
+    const delivery = getNextWeekday(new Date(now.getTime() + 5 * 24 * 60 * 60000));
+
+    const dateToday = pad(pickup.getDate()) + '.' + pad(pickup.getMonth() + 1) + '.' + pickup.getFullYear();
 
     const timePlus30 = pad(plus30.getHours()) + ':' + pad(plus30.getMinutes());
 
-    const datePlus5 = pad(plus5.getDate()) + '.' + pad(plus5.getMonth() + 1) + '.' + plus5.getFullYear();
+    const datePlus5 = pad(delivery.getDate()) + '.' + pad(delivery.getMonth() + 1) + '.' + delivery.getFullYear();
 
     pickupDate.value = dateToday;
 
@@ -95,4 +121,5 @@
   waitForFields();
 
 })();
+
  

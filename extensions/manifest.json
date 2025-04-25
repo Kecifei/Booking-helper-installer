@@ -4,7 +4,7 @@
 
   "name": "AutoFill & Net Weight Checker (With Quantity)",
 
-  "version": "1.4",
+  "version": "1.2",
 
   "description": "Fills transport data and adjusts net weights based on quantity if needed.",
 
@@ -14,7 +14,7 @@
 
     {
 
-      "matches": ["<all_urls>"],
+      "matches": ["https://solutions.inet-logistics.com/*"],
 
       "js": ["content.js"],
 
