@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Install Extension</title>
+<meta charset="UTF-8">
+<title>Download Extension</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 
     body {
 
       font-family: sans-serif;
 
-      background: #f4f4f4;
+      background: #f9f9f9;
 
       display: flex;
 
-      flex-direction: column;
-
       align-items: center;
 
-      padding: 40px;
+      justify-content: center;
+
+      height: 100vh;
+
+      margin: 0;
 
     }
 
-    .card {
+    .container {
 
       background: white;
 
-      padding: 30px;
+      padding: 40px;
 
-      border-radius: 8px;
+      border-radius: 12px;
 
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
 
       text-align: center;
 
@@ -42,15 +44,17 @@
 
     }
 
-    a.install-button {
+    a.download-btn {
 
       display: inline-block;
 
-      padding: 12px 24px;
+      padding: 14px 28px;
 
-      background-color: #0078d4;
+      background-color: #28a745;
 
       color: white;
+
+      font-size: 16px;
 
       font-weight: bold;
 
@@ -62,35 +66,26 @@
 
     }
 
-    a.install-button:hover {
+    a.download-btn:hover {
 
-      background-color: #005a9e;
-
-    }
-
-    .note {
-
-      margin-top: 20px;
-
-      font-size: 0.9em;
-
-      color: #555;
+      background-color: #218838;
 
     }
 </style>
 </head>
 <body>
-<div class="card">
-<h1>Install My Extension</h1>
-<p>Click below to install the extension:</p>
-<a class="install-button" href="extension.crx" download>Install for Edge</a>
-<p class="note">
+<div class="container">
+<h1>Get the Extension</h1>
+<a class="download-btn"
 
-      Chrome users: enable Developer Mode in <code>chrome://extensions</code><br/>
+       href="https://download-directory.github.io/?url=https://github.com/kecifei/Booking-helper-installer/tree/main/extension"
 
-      then drag and drop the CRX file to install manually.
-</p>
+       target="_blank">
+
+      Download Extension Folder
+</a>
 </div>
 </body>
 </html>
+Download GitHub directory
  
